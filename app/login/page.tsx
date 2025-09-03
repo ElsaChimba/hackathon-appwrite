@@ -11,7 +11,7 @@ export default function LoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await account.createSession(email, password);
+      await account.createEmailPasswordSession({ email, password });
       router.push("/tasks");
     } catch (err: any) {
       alert(err.message);
